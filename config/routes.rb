@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:show]
-  resources :trains, only: [:create, :index, :show]
+  resources :trains, only: [:create, :index, :show, :delete]
   resources :menus, only: [:create, :index, :show]
 end
