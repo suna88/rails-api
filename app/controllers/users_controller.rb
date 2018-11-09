@@ -1,4 +1,17 @@
 class UsersController < ApplicationController
+
+  def my_page
+    if @current_user
+      render json: user_response_hash(@current_user)
+    else
+      render plain: 'not found'
+    end
+  end
+
+  def show
+
+  end
+
   def create
     @user = User.new(user_params)
 
@@ -6,17 +19,17 @@ class UsersController < ApplicationController
     if @user.save
       render json: user_response_hash(@user)
     else
-      render json: {error:'Authentication failed.'}, status: 401
+      render json: {error: 'Authentication failed.'}, status: 401
     end
   end
 
   private
   def user_params
     params.require(:user).permit(
-    :name,
-    :password,
-    :password_confirmation,
-    :token
+        :name,
+        :password,
+        :password_confirmation,
+        :token
     )
   end
 

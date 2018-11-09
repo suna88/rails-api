@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   post 'login/login'
   resources :users, only: [:show, :create] do
+    collection do
+      get :my_page
+    end
   end
   resources :trains, only: [:create, :index, :show, :delete]
   resources :menus, only: [:create, :index, :show]
