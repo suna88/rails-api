@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  before_action :set_menu, only: [:show]
+  before_action :set_menu, only: [:show, :destroy]
 
   def index
     @menus = Menu.all
