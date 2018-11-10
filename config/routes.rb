@@ -9,6 +9,6 @@ Rails.application.routes.draw do
       get :my_page
     end
   end
-  resources :trains, only: [:create, :index, :show, :delete]
-  resources :menus, only: [:create, :index, :show]
+  resources :trains, only: [:create, :index, :show]
+  resources :menus
 end
