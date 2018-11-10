@@ -16,6 +16,12 @@ class MenusController < ApplicationController
     end
   end
 
+  def destroy
+    @test.destroy
+
+    render json: {result: 'ok'}
+  end
+
   def show
     render json: {menu: @menu, trains: @menu.trains}
   end
