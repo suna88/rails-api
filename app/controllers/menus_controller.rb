@@ -17,7 +17,7 @@ class MenusController < ApplicationController
   end
 
   def destroy
-    @test.destroy
+    @menu.destroy
 
     render json: {result: 'ok'}
   end
