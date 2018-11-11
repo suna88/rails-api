@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  #before_action :auth
+  before_action :auth
 
   def auth
     user_id = request.headers['user-id']
