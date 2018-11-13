@@ -7,7 +7,6 @@ class TrainsController < ApplicationController
 
   def create
     @train = Train.new(train_params)
-
   end
 
   private

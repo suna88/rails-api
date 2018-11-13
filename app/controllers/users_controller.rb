@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :auth, only: [:create]
   def index
     users = User.all
     render json: users
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    render json: user_response_hash(@user)
   end
 
   def create
@@ -28,6 +29,10 @@ class UsersController < ApplicationController
   end
 
   private
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
     params.require(:user).permit(
         :name,
