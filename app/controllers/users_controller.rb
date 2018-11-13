@@ -46,7 +46,8 @@ class UsersController < ApplicationController
     {
         id: user.id,
         name: user.name,
-        token: user.token
+        token: user.token,
+        menus: user.menus.all
     }
   end
 end

@@ -8,6 +8,7 @@ class MenusController < ApplicationController
 
   def create
     @menu = Menu.new(menu_params)
+    @menu.user_id = @current_user.id
 
     if @menu.save
       render json: @menu, status: :created
